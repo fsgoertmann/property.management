@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class PropertyConverter {
 
-    public PropertyEntity convertPropertyEntityToModel(Property property) {
+    public PropertyEntity convertPropertyModelToEntity(Property property) {
         PropertyEntity propertyEntity = new PropertyEntity();
 
         propertyEntity.setTitle(property.getTitle());
@@ -20,7 +20,7 @@ public class PropertyConverter {
         return propertyEntity;
     }
 
-    public Property convertPropertyModelToEntity(PropertyEntity propertyEntity) {
+    public Property convertPropertyEntityToModel(PropertyEntity propertyEntity) {
         Property property = new Property();
 
         property.setTitle(propertyEntity.getTitle());
