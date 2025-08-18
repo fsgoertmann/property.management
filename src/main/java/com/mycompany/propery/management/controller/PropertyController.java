@@ -3,6 +3,7 @@ package com.mycompany.propery.management.controller;
 import com.mycompany.propery.management.model.Property;
 import com.mycompany.propery.management.service.PropertyService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
