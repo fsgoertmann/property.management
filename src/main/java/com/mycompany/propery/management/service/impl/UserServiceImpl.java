@@ -27,7 +27,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public User register(User user) {
         Optional<UserEntity> userEntity = userRepository.findByUserEmail(user.getUserEmail());
-        if (!userEntity.isPresent()) {
+        if (userEntity.isEmpty()) {
             UserEntity ue = userRepository.save(userConverter.convertUserModelToEntity(user));
             return userConverter.convertUserEntityToModel(ue);
         }
