@@ -5,7 +5,6 @@ import com.mycompany.propery.management.entity.PropertyEntity;
 import com.mycompany.propery.management.model.Property;
 import com.mycompany.propery.management.repository.PropertyRepository;
 import com.mycompany.propery.management.service.PropertyService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,11 +12,14 @@ import java.util.Optional;
 
 @Service
 public class PropertyServiceImpl implements PropertyService {
-    @Autowired
-    private PropertyRepository propertyRepository;
 
-    @Autowired
+    private final PropertyRepository propertyRepository;
     private PropertyConverter propertyConverter = new PropertyConverter();
+
+    public PropertyServiceImpl(PropertyRepository propertyRepository, PropertyConverter propertyConverter) {
+        this.propertyRepository = propertyRepository;
+        this.propertyConverter = propertyConverter;
+    }
 
     @Override
     public Property saveProperty(Property property) {

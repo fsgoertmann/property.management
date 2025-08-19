@@ -23,7 +23,6 @@ public class CalculatorController {
     @PostMapping("/mul")
     public ResponseEntity<Double> multiply(@RequestBody Calculator calculator) {
         Double result = calculator.getNum1()*calculator.getNum2()*calculator.getNum3();
-        ResponseEntity<Double> responseEntity = new ResponseEntity<Double>(result, HttpStatus.CREATED);
-        return responseEntity;
+        return new ResponseEntity<>(result, HttpStatus.CREATED);
     }
 }
